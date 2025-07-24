@@ -12,3 +12,5 @@ gradle/wrapper/
 *.jks
 /.kotlin
 *.log
+*.apk
+*.dm
