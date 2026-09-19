@@ -73,6 +73,7 @@ android {
 
         debug {
             applicationIdSuffix ".debug"
+            versionNameSuffix "D"
             signingConfig signingConfigs.release
         }
 

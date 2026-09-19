@@ -17,6 +17,14 @@
 - Android 14 主力机：realme `RMX3888`，API 34。
 - 两台设备均已安装 `20260918.19` Release；物理键盘行为尚未验证，状态为 `待验证`。
 
+### Debug 标识和蓝牙键盘误判修正
+
+- Debug 版本名增加 `D` 后缀，便于与 Release 区分；当前 Debug 版本为 `20260919.14D`。
+- Android 14 日志确认 OPlus 的 `uinput_nav` 虽被标记为外部键盘，但它是虚拟导航设备，不是真实蓝牙键盘。
+- 排除 `uinput_nav` 后，断开真实蓝牙键盘时不会再误留在硬键盘/候选栏路径，会恢复完整软键盘。
+- Debug APK 已重新安装到 Android 14 `RMX3888` 的两个 ADB 连接；SHA-256：`24abe563bb400188f2fc52d04b1187bb070d2ecede0671b46c56a0250ec6a7b6`。
+- SDK Offline Kotlin 编译和完整 Debug APK 构建成功；蓝牙连接、断开及物理键盘输入仍需现场回归。
+
 ### 蓝牙键盘连接时显示完整软键盘
 
 - 修复部分设备连接蓝牙 HID 键盘后，系统 `Configuration` 仍报告无硬键盘，导致输入法错误显示候选栏而不是完整软键盘的问题。
