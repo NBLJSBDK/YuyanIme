@@ -31,6 +31,11 @@
 - 将 `showVirtualKeyboardOnPhysicalKeyboard` 默认值改为 `true`，新安装或没有该偏好的版本默认显示完整软键盘。
 - 重新构建并安装 `20260919.14D` 到 Android 14 `RMX3888`；新 APK SHA-256：`df1e3e8b88532bd9a4b21a55280a370d0896204af9c920c887cb66ffbf554d3e`。
 
+### 输入法选择器 Debug 标识
+
+- Debug 应用/输入法名称改为 `语燕输入法 D`，与 `20260919.14D` 版本号保持一致。
+- 重新构建并安装到 Android 14 `RMX3888`；APK SHA-256：`b134c09d97d6fe57f3d0d47388d1a92440ff238edada5d88011bc9f6f1e13466`。
+
 ### 蓝牙键盘连接时显示完整软键盘
 
 - 修复部分设备连接蓝牙 HID 键盘后，系统 `Configuration` 仍报告无硬键盘，导致输入法错误显示候选栏而不是完整软键盘的问题。
