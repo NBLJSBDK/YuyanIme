@@ -25,6 +25,12 @@
 - Debug APK 已重新安装到 Android 14 `RMX3888` 的两个 ADB 连接；SHA-256：`24abe563bb400188f2fc52d04b1187bb070d2ecede0671b46c56a0250ec6a7b6`。
 - SDK Offline Kotlin 编译和完整 Debug APK 构建成功；蓝牙连接、断开及物理键盘输入仍需现场回归。
 
+### Debug 无法打字的配置修正
+
+- Android 14 Debug 偏好文件中没有“物理键盘显示软键盘”配置，因此使用了旧默认值 `false`；Release 能输入是因为保留了已开启的用户设置。
+- 将 `showVirtualKeyboardOnPhysicalKeyboard` 默认值改为 `true`，新安装或没有该偏好的版本默认显示完整软键盘。
+- 重新构建并安装 `20260919.14D` 到 Android 14 `RMX3888`；新 APK SHA-256：`df1e3e8b88532bd9a4b21a55280a370d0896204af9c920c887cb66ffbf554d3e`。
+
 ### 蓝牙键盘连接时显示完整软键盘
 
 - 修复部分设备连接蓝牙 HID 键盘后，系统 `Configuration` 仍报告无硬键盘，导致输入法错误显示候选栏而不是完整软键盘的问题。
