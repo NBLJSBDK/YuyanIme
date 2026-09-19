@@ -22,7 +22,7 @@
 - 修复部分设备连接蓝牙 HID 键盘后，系统 `Configuration` 仍报告无硬键盘，导致输入法错误显示候选栏而不是完整软键盘的问题。
 - 除 `keyboard`/`hardKeyboardHidden` 配置外，增加对真实 `InputDevice` 的检查，排除虚拟输入设备。
 - 注册输入设备增删改监听；蓝牙键盘连接或断开后重新计算输入法显示模式并刷新输入 View。
-- 已通过 Offline Kotlin 编译；Android 14/16 蓝牙键盘实机验证仍待完成。
+- 已通过 SDK Offline Kotlin 编译和完整 `:app:assembleOfflineDebug`；Android 14/16 蓝牙键盘实机验证仍待完成。
 
 ## 2026-09-18
 
