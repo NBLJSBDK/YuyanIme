@@ -8,6 +8,17 @@
 - `待验证`：代码和构建已完成，但还没有完成对应设备上的行为测试。
 - 上游 issue/PR 只作为参考，不代表直接合并了上游代码。
 
+## 2026-09-27
+
+### 删除逻辑修复
+
+- SDK 提交：`f588e2f`。
+- 全选文本后按删除无效：`deleteSurroundingText` 只删光标附近字符、不删选区；改为有选区时用 `commitText("", 1)` 清空选区。
+- emoji 需多次删除：`deleteSurroundingText(1)` 一次只删一个 UTF-16 码元，代理对要按多次；改为 `deleteSurroundingTextInCodePoints(1, 0)` 按码点删除。
+- 软键盘、物理键盘、候选栏删除统一走 `ImeService.deleteBackward()`。
+- Back/HOME 逻辑复查：Android 13+ 委托系统返回仲裁，未发现残留消费或手势排除配置。
+- 已通过 Offline Release/Debug 构建；Release 已在 Android 14 `RMX3888` 上验证，状态为 `已验证`。
+
 ## 2026-09-24
 
 ### 剪贴板粘贴开关
