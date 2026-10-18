@@ -12,3 +12,5 @@ gradle/wrapper/
 *.jks
 /.kotlin
 *.log
+/q
+app/offline/release/
